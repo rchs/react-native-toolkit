@@ -1,0 +1,14 @@
+{
+  "name": "@rchs/react-native-toolkit",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/rchs/react-native-toolkit.git",
+  "author": "Aashish Karki <aashish.y2z@gmail.com>",
+  "license": "MIT",
+  "description": "react native tool kit",
+  "devDependencies": {
+    "@types/react": "^16.9.22",
+    "@types/react-native": "^0.61.16",
+    "typescript": "^3.8.2"
+  }
+}
