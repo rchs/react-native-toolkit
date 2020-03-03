@@ -1,6 +1,6 @@
 {
   "name": "@rchs/react-native-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1-rc.0",
   "description": "React Native Toolkit",
   "main": "src/index.ts",
   "react-native": "src/index.ts",
@@ -8,8 +8,8 @@
     "build": "echo 'React Native using typescript. No build.'",
     "release": "yarn version",
     "prerelease": "yarn version --prerelease --preid rc",
-    "preversion": "git pull upstream",
-    "postversion": "git push origin && git push upstream v$npm_package_version"
+    "preversion": "git pull upstream master",
+    "postversion": "git push origin master && git push upstream v$npm_package_version"
   },
   "devDependencies": {
     "@types/node": "^13.7.7",
