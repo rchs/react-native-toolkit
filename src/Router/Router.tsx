@@ -32,7 +32,7 @@ function Router({ onRouteChange, onProcess, initialRoute, ...other }: Props) {
     }
     if (to) {
       store.dispatch(to);
-      onRouteChange(to);
+      onRouteChange && onRouteChange(to);
     }
   }, []);
 

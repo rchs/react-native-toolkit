@@ -6,6 +6,8 @@ import Editor from './Editor';
 type Props = {
   defaultValue?: {},
   onSubmit: ((state: {}) => void),
+  children: React.ReactNode,
+  onChange: ((state: {}) => void)
 }
 
 const Form = ({ defaultValue, onSubmit, ...other }: Props) => {
