@@ -1,14 +1,30 @@
 {
   "name": "@rchs/react-native-toolkit",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "description": "React Native Toolkit",
   "main": "src/index.ts",
-  "repository": "https://github.com/rchs/react-native-toolkit.git",
-  "author": "Aashish Karki <aashish.y2z@gmail.com>",
-  "license": "MIT",
-  "description": "react native tool kit",
+  "react-native": "src/index.ts",
+  "scripts": {
+    "build": "echo 'React Native using typescript. No build.'",
+    "release": "yarn version",
+    "releace:rc": "yarn version --prerelease --preid rc",
+    "preversion": "git pull upstream master",
+    "postversion": "git push origin master && git push upstream v$npm_package_version"
+  },
   "devDependencies": {
-    "@types/react": "^16.9.22",
-    "@types/react-native": "^0.61.16",
-    "typescript": "^3.8.2"
-  }
+    "@types/node": "^13.7.7",
+    "react": "^16.9.0",
+    "react-native": "^0.61.0",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "git@github.com:rchs/react-native-toolkit",
+  "author": "Ranjan Shrestha <ranjan@sharingapples.com>",
+  "license": "MIT"
 }

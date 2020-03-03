@@ -9,3 +9,4 @@ export * from './Theme';
 export { default as BottomNavigation} from './BottomNavigation';
 export * from './Router';
 export * from './Form';
+export { getVersion } from './getVersion';

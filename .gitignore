@@ -1,1 +1,8 @@
 node_modules/
+.DS_Store
+node_modules
+yarn-error.log
+npm-debug.log
+
+es6
+dist
