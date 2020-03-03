@@ -1,0 +1,26 @@
+{
+  "name": "@rchs/react-native-toolkit",
+  "version": "0.1.0",
+  "description": "React Native Toolkit",
+  "main": "src/index.ts",
+  "react-native": "src/index.ts",
+  "scripts": {
+    "build": "echo 'React Native using typescript. No build.'"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "react": "^16.9.0",
+    "react-native": "^0.61.0",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "git@github.com:rchs/react-native-toolkit",
+  "author": "Ranjan Shrestha <ranjan@sharingapples.com>",
+  "license": "MIT"
+}
