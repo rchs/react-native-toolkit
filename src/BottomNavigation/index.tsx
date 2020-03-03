@@ -1,16 +1,13 @@
 // @flow
-import React, { useState } from 'react';
-import { ComponentType } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import RootView from '../RootView';
-import NavigatonContext from './NavigatonContext';
-import { Context } from './NavigatonContext';
 
 import { textColor } from './theme';
 import Nav from './Nav';
 
 type Props = {
-  home: ComponentType,
+  children: Array<React.ReactNode>,
 };
 
 const styles = StyleSheet.create({
@@ -36,24 +33,20 @@ const styles = StyleSheet.create({
  * margin is balanced when the soft keyboard is showing.
  *
  */
-function BottomNavigation({ home, ...other }: Props) {
-  const [Screen, setScreen] = useState(() => home);
-
-  const contextValue: Context = {
-    setScreen,
-    Screen,
-  };
-
+function BottomNavigation(props: Props) {
   return (
     <RootView>
-      <NavigatonContext.Provider value={contextValue}>
-        <View style={styles.container}>
-          <Screen />
-        </View>
-        <View style={styles.navBar} {...other} />
-      </NavigatonContext.Provider>
+      <View style={styles.container} {...props} />
     </RootView>
   );
+}
+
+BottomNavigation.Body = (props: Props) => {
+  return <View style={styles.container} {...props} />
+}
+
+BottomNavigation.Footer = (props: Props) => {
+  return <View style={styles.navBar} {...props} />
 }
 
 BottomNavigation.Item = Nav;

@@ -10,7 +10,6 @@ import NavigationContext from './NavigatonContext';
 
 type Props = {
   /** The screen to which is displayed when the Item is selected */
-  screen: ComponentType,
 
   /** The title to display below the the navigation item. Defaults to `screen.title` */
   title: string,
@@ -25,6 +24,12 @@ type Props = {
    * A small badge icon to display with red background
    */
   badge?: number,
+
+  // on press change route
+  onPress: () => void,
+
+  // if current screen is selected
+  isSelected: boolean,
 }
 
 const styles = StyleSheet.create({
@@ -61,19 +66,13 @@ const styles = StyleSheet.create({
 /**
  * A navigation item with icon and text to display at the bottom of screen.
  */
-export default function Item({ title, icon, badge, screen }: Props) {
-  // $FlowFixMe
-  const titleText = title || screen.title;
-  // $FlowFixMe
-  const iconSource = icon || screen.icon;
-
-  const { setScreen, Screen } = useContext(NavigationContext);
-  const tintColor = Screen === screen ? selectColor : textColor;
-
-  const selectScreen = () => setScreen(() => screen);
+export default function Item({ title, icon, badge, onPress, isSelected }: Props) {
+  const titleText = title;
+  const iconSource = icon;
+  const tintColor = isSelected ? selectColor : textColor;
 
   return (
-    <TouchableOpacity style={styles.container} onPress={selectScreen}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={iconSource} style={{ tintColor }} />
       {badge && (
         <View style={styles.badgeContainer}>
