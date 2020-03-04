@@ -16,5 +16,5 @@ jobs:
     - name: Publish package
       run: |
         yarn build
-        npm publish
+        npm publish --access public
 
