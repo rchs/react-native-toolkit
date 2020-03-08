@@ -26,7 +26,7 @@ function defaultMapState(state: ModalState, ownProps?: any) {
 
 
 export function createModal(mapState = defaultMapState) {
-  return (Component: React.Component) => ({ modal, ...other }: { modal: ModalState }) => {
+  return (Component: any) => ({ modal, ...other }: { modal: ModalState }) => {
     const props = mapState(modal, other);
 
     return (
