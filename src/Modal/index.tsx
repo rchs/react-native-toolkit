@@ -20,13 +20,17 @@ export function useModalVisibility() {
   }
 }
 
-function defaultMapState(state: ModalState, ownProps?: any) {
-  return state;
+type ModalProps<P> = P & { modal: ModalState };
+type MapState<P extends object, R extends object> = (state: ModalState, ownProps: P) => R;
+
+const defaultMapState = <T extends object>(state: ModalState, ownProps: T) => {
+  return { hide: state.hide };
 }
 
-
-export function createModal(mapState = defaultMapState) {
-  return (Component: any) => ({ modal, ...other }: { modal: ModalState }) => {
+export function createModal<P extends object, R extends object>(
+  mapState: MapState<P, R> = defaultMapState
+): (Component: React.ComponentType<P & R>) => React.FC<ModalProps<P>> {
+  return (Component) => ({ modal, ...other }) => {
     const props = mapState(modal, other);
 
     return (
