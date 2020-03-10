@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useContext, useCallback, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { TransitionView, useTransitionState } from '../../Animation';

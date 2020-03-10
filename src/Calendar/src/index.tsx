@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useCallback } from 'react';
 import { Dimensions, View, StyleSheet } from 'react-native';
 import CalendarView from './Calendar';

@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import { Animated } from 'react-native';
 import { Controller } from './Controller';

@@ -1,4 +1,3 @@
-// @flow
 import React, { useRef } from 'react';
 import TransitionContext from './TransitionContext';
 import Controller from './Controller';

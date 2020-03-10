@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { textColor, backgroundColor, primaryFontColor, primaryColor, disabledFontColor } from '../theme';

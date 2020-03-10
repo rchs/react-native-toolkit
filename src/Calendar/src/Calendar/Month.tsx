@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useRef } from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback, TouchableOpacity, Text } from 'react-native';
 import Day from './Day';
