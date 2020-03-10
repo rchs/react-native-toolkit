@@ -1,0 +1,20 @@
+name: Pre-release package
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn
+      - name: Setup authentication to publish package
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+      - name: Publish Package
+        run: |
+          yarn build
+          yarn version --prerelease --preid rc
