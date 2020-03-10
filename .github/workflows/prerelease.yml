@@ -16,5 +16,7 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - name: Publish Package
         run: |
+          git config user.email "ranjan@sharingapples.com"
+          git config user.name "Github Action"
           yarn build
           yarn version --prerelease --preid rc
