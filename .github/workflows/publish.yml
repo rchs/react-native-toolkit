@@ -9,12 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: release
     - name: Install dependencies
       run: yarn
     - name: Setup authentication token
       run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
     - name: Publish package
       run: |
+        git config user.email "ranjan@sharingapples.com"
+        git config user.name "Github Action"
         yarn build
-        npm publish
+        yarn publish --patch
+        git push origin release
 
