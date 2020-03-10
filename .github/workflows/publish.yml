@@ -22,4 +22,6 @@ jobs:
         yarn build
         yarn publish --patch
         git push origin release
+        git push origin master
+
 
