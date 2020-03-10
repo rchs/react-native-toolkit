@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "react-native": "src/index.ts",
   "scripts": {
-    "build": "echo 'React Native using typescript. No build.'"
+    "build": "echo 'React Native using typescript. No build.'",
+    "postversion": "git push origin v$npm_package_version"
   },
   "devDependencies": {
     "@types/node": "^13.7.7",
