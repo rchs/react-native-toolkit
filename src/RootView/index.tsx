@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import SafePadding from '../SafePadding';

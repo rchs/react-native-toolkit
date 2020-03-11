@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import useFormInput from './useFormInput';
 import Editor, { useEditor } from './Editor';

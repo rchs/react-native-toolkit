@@ -1,4 +1,3 @@
-// @flow
 import React, { useContext } from 'react';
 import { ComponentType } from 'react';
 import {

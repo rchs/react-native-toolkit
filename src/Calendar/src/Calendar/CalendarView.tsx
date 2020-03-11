@@ -1,4 +1,3 @@
-// @flow
 import React, { useContext, useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Month from './Month';

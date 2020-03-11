@@ -1,4 +1,3 @@
-// @flow
 import { useEffect } from 'react';
 import { useController } from './Controller';
 import { Animation } from './Controller';

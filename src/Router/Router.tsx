@@ -1,4 +1,3 @@
-// @flow
 import React, { useEffect, useCallback } from 'react';
 import { Linking } from 'react-native';
 import { useTransitionStore, withTransition, useTransitionController } from './transition';
