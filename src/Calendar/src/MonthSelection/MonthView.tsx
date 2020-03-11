@@ -1,4 +1,3 @@
-// @flow
 import React, { useCallback, useContext } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 

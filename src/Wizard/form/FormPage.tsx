@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { Group, useFormSubmit } from '../../Form';

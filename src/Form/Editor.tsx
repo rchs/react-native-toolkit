@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useContext, useEffect } from 'react';
 import ValidationError from './ValidationError';
 

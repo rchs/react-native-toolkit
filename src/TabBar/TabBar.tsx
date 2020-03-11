@@ -1,4 +1,3 @@
-// @flow
 import React, { useRef, useCallback } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import RootView from '../RootView';

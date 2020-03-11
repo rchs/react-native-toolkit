@@ -1,4 +1,3 @@
-// @flow
 import { Platform, NativeModules } from 'react-native';
 
 type Rect = {

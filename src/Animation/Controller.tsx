@@ -1,4 +1,3 @@
-// @flow
 import { useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 
