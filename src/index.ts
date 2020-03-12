@@ -11,3 +11,4 @@ export * from './Router';
 export * from './Form';
 export { getVersion } from './getVersion';
 export * from './Modal';
+export { default as Backdrop } from './Backdrop';
