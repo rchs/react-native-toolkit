@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Modal } from 'react-native';
+import { Modal, StyleSheet, TouchableWithoutFeedback, View, ModalProps as RNModalProps, ViewStyle } from 'react-native';
 
 type ModalState = {
   show: () => void,
@@ -21,22 +21,43 @@ export function useModalVisibility() {
 }
 
 type ModalProps<P> = P & { modal: ModalState };
-type MapState<P extends object, R extends object> = (state: ModalState, ownProps: P) => R;
+type MapState<P extends object> = (state: ModalState, ownProps: P) => {};
 
-const defaultMapState = <T extends object>(state: ModalState, ownProps: T) => {
+const defaultMapState = <P extends object>(state: ModalState, ownProps: P) => {
   return { hide: state.hide };
 }
 
 export function createModal<P extends object, R extends object>(
-  mapState: MapState<P, R> = defaultMapState
+  mapState: MapState<P> = defaultMapState, options: RNModalProps
 ): (Component: React.ComponentType<P & R>) => React.FC<ModalProps<P>> {
   return (Component) => ({ modal, ...other }) => {
     const props = mapState(modal, other);
 
     return (
-      <Modal visible={modal.visible}>
+      <Modal visible={modal.visible} {...options}>
         <Component {...other} {...props} />
       </Modal>
     )
   }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)'
+  }
+});
+
+type ModalBackDropProps = { onPress: () => void, children: React.Node, style?: ViewStyle };
+
+export function ModalBackDrop({ onPress, style, children }: ModalBackDropProps) {
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={[styles.container, style]}>
+        {children}
+      </View>
+    </TouchableWithoutFeedback>
+  );
 }
