@@ -28,7 +28,7 @@ const defaultMapState = <P extends object>(state: ModalState, ownProps: P) => {
 }
 
 export function createModal<P extends object, R extends object>(
-  mapState: MapState<P> = defaultMapState, options: RNModalProps
+  mapState: MapState<P> = defaultMapState, options?: RNModalProps
 ): (Component: React.ComponentType<P & R>) => React.FC<ModalProps<P>> {
   return (Component) => ({ modal, ...other }) => {
     const props = mapState(modal, other);
@@ -50,14 +50,12 @@ const styles = StyleSheet.create({
   }
 });
 
-type ModalBackDropProps = { onPress: () => void, children: React.Node, style?: ViewStyle };
+type ModalBackDropProps = { onPress?: () => void, style?: ViewStyle };
 
-export function ModalBackDrop({ onPress, style, children }: ModalBackDropProps) {
+export function ModalBackDrop({ onPress, style }: ModalBackDropProps) {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
-      <View style={[styles.container, style]}>
-        {children}
-      </View>
+    <TouchableWithoutFeedback onPress={onPress && onPress}>
+      <View style={[styles.container, style]} />
     </TouchableWithoutFeedback>
   );
 }
