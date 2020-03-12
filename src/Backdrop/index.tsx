@@ -3,7 +3,7 @@ import { StyleSheet, TouchableWithoutFeedback, View, ViewStyle } from 'react-nat
 
 type Props = { onPress?: () => void, style?: ViewStyle };
 
-export default function Backdrop({ onPress, style }: Props) {
+export function Backdrop({ onPress, style }: Props) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={[StyleSheet.absoluteFill, style]} />
