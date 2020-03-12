@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Modal, StyleSheet, TouchableWithoutFeedback, View, ModalProps as RNModalProps, ViewStyle } from 'react-native';
+import { Modal, ModalProps as RNModalProps } from 'react-native';
 
 type ModalState = {
   show: () => void,
@@ -39,23 +39,4 @@ export function createModal<P extends object, R extends object>(
       </Modal>
     )
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)'
-  }
-});
-
-type ModalBackDropProps = { onPress?: () => void, style?: ViewStyle };
-
-export function ModalBackDrop({ onPress, style }: ModalBackDropProps) {
-  return (
-    <TouchableWithoutFeedback onPress={onPress && onPress}>
-      <View style={[styles.container, style]} />
-    </TouchableWithoutFeedback>
-  );
 }
