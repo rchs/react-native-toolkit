@@ -7,8 +7,8 @@ type ModalState = {
   visible: boolean,
 }
 
-export function useModalVisibility() {
-  const [visible, setVisible] = useState<boolean>(false);
+export function useModalVisibility(initialState: boolean = false) {
+  const [visible, setVisible] = useState<boolean>(initialState);
 
   const show: () => void = useCallback(() => setVisible(true), []);
   const hide: () => void = useCallback(() => setVisible(false), []);
